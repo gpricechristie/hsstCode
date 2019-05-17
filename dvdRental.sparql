@@ -1,0 +1,15 @@
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sys:<http://www.openrdf.org/config/repository#>
+PREFIX vocab: <file:///d:/temp/d2rq/vocab/>
+SELECT ?firstName ?lastName ?filmName
+WHERE{
+{?custID vocab:customer_first_name ?firstName;
+         vocab:customer_last_name ?lastName.}
+{?r vocab:rental_customer_id ?custID;
+    vocab:rental_inventory_id ?invID.}
+{?invID vocab:inventory_film_id ?invFilmID.}
+{?invFilmID vocab:film_title ?filmName;
+    vocab:film_film_id ?filmID.}
+FILTER regex(?filmName, "Whale", "i")
+}
+ORDER BY ?firstName ?lastName ?filmName
