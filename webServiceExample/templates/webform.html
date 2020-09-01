@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HSST B2 Static website!</title>
+
+    <link     href='http://fonts.googleapis.com/css?family=Sintony:400,700'     rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+      body
+      {
+        text-align:center;
+        border-radius:5px;
+        margin:90px auto auto;
+        padding:80px 0;
+        background-color:#000;
+        background-image: url('static/christie.jpg');
+        font-size:20px;
+      }
+
+      h1
+      {
+        font-size:48px;
+        margin-top:0;
+        font-family:Arial, sans-serif;
+        text-shadow:2px 0 15px #292929;
+        letter-spacing:4px;
+        text-decoration:none;
+        color:#DDD;
+      }
+
+      label {
+        display: block;
+        font-size: 20px;
+      }
+
+      input
+      {
+        display: block;
+        text-align: centre;
+        margin: 0 auto;
+        font-size: 20px;
+      }
+
+      select
+      {
+        font-size: 20px;
+      }
+
+      .lead
+      {
+        background-color:rgba(255,255,255,0.6);
+        border-radius:3px;
+        box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
+        font-family:Sintony, sans-serif;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+      <h1>HSST B2 Dynamic website</h1>
+      <p class="lead">Dynamic websites can also be easy!</p>
+
+      <form action="add_data" method="post">
+
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+              <label for="valueof">Value of clinical computing</label>
+              <select id="valueof" name="valueofcomputing">
+                  <option value="absolutely excellent!">Great!</option>
+                  <option value="beyond excellent!!">Really great!</option>
+                  <option value="the best thing ever!!!">Even better!!</option>
+              </select>
+              <input type="submit" value="Submit">
+      </form>
+
+      <p class="lead"> Comments </p>
+
+      <div style="font-size: 20px; font-family:Arial, sans-serif;">
+      <ol>
+          {%for i in range(0, len)%}
+          <li>{{displayComments[i]}}</li>
+          {% endfor %}
+      </ol>
+      </div>
+
+  </body>
+</html>
+
