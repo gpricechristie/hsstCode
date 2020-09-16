@@ -7,4 +7,4 @@ It should contain:
 4. HSST_B2_DataSciencePractical.R - Example script used to analyse open lung cancer data
 5. HSST_B2_DataSciencePractical2.R - Example script used to extract data directly from database in R
 6. Web Service Example - Examples applications using flask to demonsrate static and dynamic websites plus a RESTful interface
-7. Dataset for very simple causal inference example
+7. Dataset and R script for very simple causal inference example
